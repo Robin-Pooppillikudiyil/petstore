@@ -1,10 +1,10 @@
 package com.cloud.petstore.repository;
 
-import com.cloud.petstore.data.Pet;
+import org.apache.catalina.Store;
 import org.springframework.data.repository.CrudRepository;
 
 import javax.persistence.Id;
 
-public interface PetRepository extends CrudRepository<Pet, Id> {
+public interface StoreRepository extends CrudRepository<Store, Id> {
 
 }

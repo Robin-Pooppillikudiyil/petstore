@@ -7,5 +7,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/pet")
 public class PetController {
-    @GetMapping("")
+
 }
