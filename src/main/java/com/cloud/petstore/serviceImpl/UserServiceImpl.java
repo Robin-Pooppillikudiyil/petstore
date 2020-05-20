@@ -52,4 +52,13 @@ public class UserServiceImpl implements UserService {
         userRepository.delete(dbUser);
         return new ResponseData(HttpStatus.OK.value(), "unknown", userName);
     }
+
+   /* @Override
+    public ResponseData saveUserLoginDetail(String userName, String password) {
+        if (userName != null) {
+            return new ResponseData(HttpStatus.BAD_REQUEST.value(), "unknown", "Invalid username/password supplied");
+        }
+        userRepository.save(userName,password);
+        return new ResponseData(HttpStatus.OK.value(), "unknown", userName);
+    }*/
 }

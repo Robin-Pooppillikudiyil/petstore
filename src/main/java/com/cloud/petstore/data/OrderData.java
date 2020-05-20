@@ -1,23 +1,29 @@
 package com.cloud.petstore.data;
 
+import com.cloud.petstore.data.enums.Status;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Tag {
+public class OrderData {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
 
-    String name;
+    int petId;
+    int quantity;
+    Date shipDate;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "pet_id", nullable = false)
-    private Pet pet;
+    @Enumerated(EnumType.STRING)
+    Status status;
+
+    boolean complete;
+
 }

@@ -15,4 +15,6 @@ public interface UserService {
     ResponseData updateUserByUserName(String userName, User user);
 
     ResponseData deleteUserByUserName(String userName);
+
+    //ResponseData saveUserLoginDetail(String userName, String password);
 }

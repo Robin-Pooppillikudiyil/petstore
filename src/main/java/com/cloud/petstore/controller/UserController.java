@@ -31,16 +31,19 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
+   /* @GetMapping("login")
+    public ResponseEntity<ResponseData> loginUser(@RequestParam String userName, @RequestParam String password) {
+        ResponseData responseData = userService.saveUserLoginDetail(userName,password);
+        return new ResponseEntity(responseData, HttpStatus.valueOf(responseData.getCode()));
+    }*/
+
+
     @PostMapping
     public ResponseEntity<ResponseData> createUser(@RequestBody User user) {
         ResponseData responseData = userService.saveUser(user);
         return new ResponseEntity(responseData, HttpStatus.valueOf(responseData.getCode()));
 
     }
-    /*@PostMapping("/createUsersWithListInput")
-    public List<User> createUsersWithListInput(@ResponseBody User user){
-        return userService.saveAllUser(user);;
-    }*/
 
     @PutMapping("/{userName}")
     public ResponseEntity<ResponseData> updateUser(@PathVariable String userName, @RequestBody User user) {
